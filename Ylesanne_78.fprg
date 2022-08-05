@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="MarkoKask"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-27 03:52:18 PL"/>
+        <attribute name="created" value="TWFya29LYXNrO01BUktPOzIwMjEtMTAtMjc7MDI6NDM6MDMgUEw7MjU0OA=="/>
+        <attribute name="edited" value="TWFya29LYXNrO01BUktPOzIwMjEtMTAtMjc7MDM6NTI6MTggUEw7MTA7MjcxMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="&quot;Halli kanga A meetrit maksab B eurot ja sinise kanga K meetrit maksab M eurot. Kumb kangas on kallim ja kui palju?&quot;"/>
+            <declare name="halliKangaMeetriHind, siniseKangaMeetriHind, halliKangaKogus, siniseKangaKogus, halliKangaLoppHind, siniseKangaLoppHind, vahe" type="Real" array="False" size=""/>
+            <output expression="&quot;Sisesta halli kanga meetri hind: &quot;" newline="True"/>
+            <input variable="halliKangaMeetriHind"/>
+            <while expression="halliKangaMeetriHind &lt;= 0">
+                <output expression="&quot;Sisesta 0-st suurem positiivne arv: &quot;" newline="True"/>
+                <input variable="halliKangaMeetriHind"/>
+            </while>
+            <output expression="&quot;Sisesta sinise kanga meetri hind: &quot;" newline="True"/>
+            <input variable="siniseKangaMeetriHind"/>
+            <while expression="siniseKangaMeetriHind &lt;= 0">
+                <output expression="&quot;Sisesta 0-st suurem positiivne arv: &quot;" newline="True"/>
+                <input variable="siniseKangaMeetriHind"/>
+            </while>
+            <output expression="&quot;Sisesta mitu meetrit halli kangast soovid: &quot;" newline="True"/>
+            <input variable="halliKangaKogus"/>
+            <while expression="halliKangaKogus &lt;= 0">
+                <output expression="&quot;Sisesta 0-st suurem positiivne arv: &quot;" newline="True"/>
+                <input variable="halliKangaKogus"/>
+            </while>
+            <output expression="&quot;Sisesta mitu meetrit sinist kangast soovid: &quot;" newline="True"/>
+            <input variable="siniseKangaKogus"/>
+            <while expression="siniseKangaKogus &lt;= 0">
+                <output expression="&quot;Sisesta 0-st suurem positiivne arv: &quot;" newline="True"/>
+                <input variable="siniseKangaKogus"/>
+            </while>
+            <assign variable="halliKangaLoppHind" expression="halliKangaMeetriHind * halliKangaKogus"/>
+            <assign variable="siniseKangaLoppHind" expression="siniseKangaMeetriHind * siniseKangaKogus"/>
+            <output expression="halliKangaKogus &amp; &quot; meetrit halli kangast maksab &quot; &amp; halliKangaLoppHind &amp; &quot; eurot.&quot;" newline="True"/>
+            <output expression="siniseKangaKogus &amp; &quot; meetrit sinist kangast maksab &quot; &amp; siniseKangaLoppHind &amp; &quot; eurot.&quot;" newline="True"/>
+            <if expression="halliKangaLoppHind &gt; siniseKangaLoppHind">
+                <then>
+                    <assign variable="vahe" expression="halliKangaLoppHind - siniseKangaLoppHind"/>
+                    <output expression="&quot;Hall kangas on &quot; &amp; vahe &amp; &quot; eurot kallim.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="siniseKangaLoppHind &gt; halliKangaLoppHind">
+                        <then>
+                            <assign variable="vahe" expression="siniseKangaLoppHind - halliKangaLoppHind"/>
+                            <output expression="&quot;Sinine kangas on &quot; &amp; vahe &amp; &quot; eurot kallim.&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Halli ja sinise kanga hind on v&#245;rdne.&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

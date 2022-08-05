@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="MarkoKask"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-27 02:42:28 PL"/>
+        <attribute name="created" value="TWFya29LYXNrO01BUktPOzIwMjEtMTAtMjc7MDI6MTU6NDkgUEw7MjU1Nw=="/>
+        <attribute name="edited" value="TWFya29LYXNrO01BUktPOzIwMjEtMTAtMjc7MDI6NDI6MjggUEw7OTsyNjcw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Et k&#252;psised oleks muredad, lisatakse neile k&#252;psetuspulbrit, milles on s&#246;&#246;gisoodat -25%, sidrunhapet -15% ning jahu -60%. Kui palju soodat, sidrunhapet ja jahu on vaja et valmistada A gr k&#252;psetuspulbrit?"/>
+            <declare name="kogus, sooda, sidrunhape, jahu" type="Real" array="False" size=""/>
+            <output expression="&quot;Mitu grammi k&#252;psetuspulbrit soovid valmistada?&quot;" newline="True"/>
+            <input variable="kogus"/>
+            <while expression="kogus &lt;=0">
+                <output expression="&quot;Sisesta 0-st suurem positiivne number!&quot;" newline="True"/>
+                <input variable="kogus"/>
+            </while>
+            <assign variable="sooda" expression="kogus * 0.25"/>
+            <assign variable="sidrunhape" expression="kogus * 0.15"/>
+            <assign variable="jahu" expression="kogus * 0.60"/>
+            <output expression="&quot;Selleks et valmistada &quot; &amp; kogus &amp; &quot;grammi k&#252;psetuspulbrit on vaja: &quot;" newline="True"/>
+            <output expression="sooda &amp; &quot; grammi soodat,&quot;" newline="True"/>
+            <output expression="sidrunhape &amp; &quot; grammi sidrunhapet,&quot;" newline="True"/>
+            <output expression="jahu &amp; &quot; grammi jahu.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

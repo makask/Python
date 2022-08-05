@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="MarkoKask"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-27 04:24:56 PL"/>
+        <attribute name="created" value="TWFya29LYXNrO01BUktPOzIwMjEtMTAtMjc7MDM6NTU6NDEgUEw7MjU1NA=="/>
+        <attribute name="edited" value="TWFya29LYXNrO01BUktPOzIwMjEtMTAtMjc7MDQ6MjQ6NTYgUEw7MzsyNjY3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="&quot;Printida ainult need kahekohalised arvud, mis jaguvad 4-ga, kuid ei jagu 6-ga. &quot;"/>
+            <declare name="number, x, y" type="Integer" array="False" size=""/>
+            <output expression="&quot;Kahekohalised arvud, mis jaguvad 4-ga kuid ei jagu 6-ga: &quot;" newline="True"/>
+            <for variable="number" start="10" end="99" direction="inc" step="1">
+                <assign variable="x" expression="number % 4"/>
+                <assign variable="y" expression="number % 6"/>
+                <if expression="x == 0 &amp;&amp; y &gt; 0">
+                    <then>
+                        <output expression="number" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
